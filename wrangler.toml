@@ -18,6 +18,3 @@ crons = ["*/2 * * * *"]
 [site]
 bucket = "out"
 entry-point = "./"
-
-[vars]
-SECRET_DISCORD_WEBHOOK_URL=""
