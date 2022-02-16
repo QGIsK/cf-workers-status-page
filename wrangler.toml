@@ -13,7 +13,7 @@ zone_id="fee4c1ef5cc84a9c27bb143ec0bcf6d8"
 route="status.demiann.dev/*"
 
 [triggers]
-crons = ["*/2 * * * *"]
+crons = ["*/30 * * * *"]
 
 [site]
 bucket = "out"
