@@ -1,19 +1,23 @@
-name = "cf-workers-status-page"
+name = "status-page"
 workers_dev = true
-account_id = ""
+account_id = "1bda26fe457ea7a9dcd193e268e07770"
 type = "webpack"
 webpack_config = "node_modules/flareact/webpack"
 compatibility_date = "2021-07-23"
 
+kv_namespaces = [
+  { binding = "KV_STATUS_PAGE", id = "14bf59e54bf54520b9f642edb1317b95" }
+]
+
+zone_id="fee4c1ef5cc84a9c27bb143ec0bcf6d8"
+route="status.demiann.dev/*"
+
 [triggers]
-crons = ["* * * * *"]
+crons = ["*/2 * * * *"]
 
 [site]
 bucket = "out"
 entry-point = "./"
 
-# uncomment and adjust following if you are not using GitHub Actions
-#[env.production]
-#kv-namespaces = [{binding="KV_STATUS_PAGE", id="xxxx", preview_id=""}]
-#zone_id="xxx"
-#route="xxx"
+[vars]
+SECRET_DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/943584168179281940/AHcnOZmoV34koSwCR7tRKGmmiwwTtWRaoZzWSU-jPHofc9-WMNTJFJftmxcAb97_O5oy"

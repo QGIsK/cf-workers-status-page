@@ -1,8 +1,8 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.demiann.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 45 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -15,25 +15,74 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: portfolio.demiann # unique identifier
+    name: demiann.dev
+    description: 'Portfolio website'
+    url: 'https://demiann.dev' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+
+  - id: api.demiann # unique identifier
+    name: api.demiann.dev
+    description: 'Personal API'
+    url: 'https://api.demiann.dev' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: media.demiann # unique identifier
+    name: media.demiann.dev
+    description: 'Analytics website'
+    url: 'https://media.demiann.dev' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
+  - id: cdn.demiann # unique identifier
+    name: cdn.demiann.dev
+    description: 'CDN Worker'
+    url: 'https://cdn.demiann.dev' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 403 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: cdn.pure # unique identifier
+    name: cdn-pure.demiann.dev
+    description: 'CDN Worker'
+    url: 'https://cdn-pure.demiann.dev' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 403 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: cstools-app # unique identifier
+    name: cstools.app
+    description: 'CSTools Frontend'
+    url: 'https://cstools.app' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+  - id: cstools.api # unique identifier
+    name: api.cstools.app
+    description: 'CSTools API'
+    url: 'https://cstools.app/api' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: subscroller.app # unique identifier
+    name: subscroller.app
+    description: 'Subscroller application'
+    url: 'https://subscroller.app/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
