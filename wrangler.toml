@@ -20,4 +20,4 @@ bucket = "out"
 entry-point = "./"
 
 [vars]
-SECRET_DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/943584168179281940/AHcnOZmoV34koSwCR7tRKGmmiwwTtWRaoZzWSU-jPHofc9-WMNTJFJftmxcAb97_O5oy"
+SECRET_DISCORD_WEBHOOK_URL=""
