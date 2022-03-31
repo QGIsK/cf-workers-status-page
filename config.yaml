@@ -60,6 +60,24 @@ monitors:
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
+  - id: discounted.gg # unique identifier
+    name: discounted.gg
+    description: 'Discounted.gg frontend'
+    url: 'https://discounted.gg' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+
+  - id: api.discounted.gg # unique identifier
+    name: api.discounted.gg
+    description: 'Discounted.gg Backend'
+    url: 'https://api.discounted.gg/discounts' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
   - id: cstools-app # unique identifier
     name: cstools.app
     description: 'CSTools Frontend'
